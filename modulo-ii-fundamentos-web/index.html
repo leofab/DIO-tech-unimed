@@ -21,7 +21,7 @@
                     <img src="./img/insta.png" alt="Instagram logo" style="margin: 2rem; ">
                     <input type="text" placeholder="Telefone, nome de usuário ou email" style="background-color: #f8f8f8; border: 0.5px solid lightgray; margin:0.2rem; width: 16rem; height: 2rem; font-size: 0.7rem; text-indent: 0.5rem; border-radius: 0.2rem;" >
                     <input type="text" placeholder="Senha" style="background-color: #f8f8f8; border: 0.5px solid lightgray; margin:0.2rem; width: 16rem; height: 2rem; font-size: 0.7rem; text-indent: 0.5rem; border-radius: 0.2rem;">
-                    <button style="background-color: hsla(208, 83%, 73%, 0.63); width: 16rem; height: 2rem; color: #f8f8f8; margin: 0.8rem; border-radius: 0.3rem;">Entrar</button>
+                    <button style="background-color: hsla(208, 83%, 73%, 0.63); width: 16rem; height: 2rem; color: #f8f8f8; margin: 0.8rem; border-radius: 0.3rem; cursor: pointer;">Entrar</button>
                     <p style="font-size: 0.75rem; font-weight: lighter; color: #777;margin: 0.4rem;">OU</p>
                     <div class="container" style="margin: 1.2rem; align-items: center;">
                         <ion-icon name="logo-facebook" style="color: blue; font-size: 1.4rem;"></ion-icon>
@@ -29,21 +29,21 @@
                     </div>
                     <a style="font-size: 0.7rem; text-decoration: none; color: blue; margin: 0.2rem;"href="#">Esqueceu a senha?</a>
                 </div>
-                <div class="container-box container-box-data-sm">
-                    <p>Não tem conta? <a href="#">Cadastre-se</a></p>
+                <div class="container-box container-box-data-sm" style="padding: 1.2rem 1rem 1.2rem 1rem;">
+                    <p style="font-size: 0.8rem; letter-spacing: 0.1rem; font-weight: lighter; ">Não tem uma conta? <a href="#" style="color: hsl(208, 88%, 61%); text-decoration:none; font-weight: bolder;">Cadastre-se</a></p>
                 </div>
-                <div class="container-box container-box-data-sm">
+                <div class="container-box container-box-data-sm" style="border: none; margin: 1rem 0 0 0; font-size: 0.8rem;">
                     <p>Obtenha o aplicativo</p>
                     <div class="container">
-                        <img src="img/store.png" alt="Appstore Icon" style="width: 8rem; ">
-                        <img src="img/play.png" alt="Playstore Icon" style="width: 8rem;">
+                        <a href="#"><img src="img/store.png" alt="Appstore Icon" style="width: 8rem; margin: 0.2rem;"></a>
+                        <a href="#"><img src="img/play.png" alt="Playstore Icon" style="width: 8rem; margin: 0.2rem;"></a>
                     </div>
                 </div>
             </section>
         </section>
     </main>
     <footer class="container">
-        <section>
+        <section class="container-footer">
             <div>
                 <a href="#">Meta</a>
                 <a href="#">Sobre</a>
@@ -63,12 +63,12 @@
                 <a href="#">Música</a>
                 <a href="#">Artes visuais</a>
             </div>
-            <div>
-                <select name="Lingua" id="">
+            <div class="container container-footer">
+                <select name="Lingua" id="lang" style="margin: 0.2rem 2rem; font-size:0.7rem; color: #aaa;">
                     <option value="ptbr">Portugues</option>
                     <option value="us">Ingles</option>
                 </select>
-                <p>©2022 Instagram from Meta</p>
+                <p style="font-size: 0.8rem; margin-right:1rem; color: #aaa;">©2022 Instagram from Meta</p>
             </div>
         </section>
     </footer>
