@@ -16,3 +16,7 @@ input.addEventListener('input', function(e) {
     btn.disabled = false;
     btn.style.backgroundColor = 'hsla(208, 83%, 73%, 0.965)';
 });
+
+input.addEventListener('emptied', function(e) {
+console.log('w');
+})
