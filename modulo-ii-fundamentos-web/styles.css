@@ -20,6 +20,7 @@ html {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    /* max-width: 26rem; */
 }
 
 .container-box {
@@ -35,7 +36,7 @@ html {
     /* border: 2px solid #444; */
     display: flex;
     align-items: center;
-    width: 30rem;
+    /* width: 30rem; */
 }
 
 .container-box-data {
@@ -53,11 +54,8 @@ html {
 .container-box-data-sm {
     border: 1px solid #ccc;
     background-color: #fff;
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 20rem;
+    text-align: center;
 }
 
 
@@ -66,7 +64,29 @@ html {
     margin-bottom: 2.5rem;
 }
 
+@media(max-width: 820px) {
+    body {
+        background-color: #ffffff;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .container-box {
+        width: 90%;
+        margin: 0.2rem;
+    }
+    
+
+   .container-box-img {
+       display: none;
+   }
+   
+}
 
 
 
