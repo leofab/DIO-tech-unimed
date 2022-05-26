@@ -161,7 +161,6 @@ function preencherSenha() {
     let query = document.getElementById('search').value;
     let listaDeFilmes = await procurarFilme(query);
     let ul = document.createElement('ul');
-    let ol = document.createElement('ol');
     ul.id = "lista";
     for (const item of listaDeFilmes.results) {
       let li = document.createElement('li');
@@ -173,22 +172,54 @@ function preencherSenha() {
       ul.appendChild(btn);
     }
 
-    // * Implementei um método junto ao botão 'Adiciona' criado no método do botão Busca para adicionar os filmes a lista.
     for (let i = 0; i < ul.children.length; i++) {
       ul.children[i].id = i.toString();
-      if (Number(ul.children[i].id)%2 != 0) {
-        ul.children[i].addEventListener('click', async () => {
-          let li = document.createElement('li');
-          li.appendChild(document.createTextNode(ul.children[i-1].innerText))
-          ol.appendChild(li);
-          list.appendChild(ol);
-        })
-      }
     }
     
     console.log(listaDeFilmes);
     searchContainer.appendChild(ul)
   });
-  
 
- 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  async function criarLista(nomeDaLista: string, descricao: string) {
+    let result = await HttpClient.get({
+      url: `https://api.themoviedb.org/3/list?api_key=${apiKey}&session_id=${sessionID}`,
+      method: "POST",
+      body: {
+        name: nomeDaLista,
+        description: descricao,
+        language: "pt-br"
+      }
+    })
+    console.log(result);
+  }
+  
+  async function adicionarFilmeNaLista(filmeId: string, listaId: string) {
+    let result = await HttpClient.get({
+      url: `https://api.themoviedb.org/3/list/${listaId}/add_item?api_key=${apiKey}&session_id=${sessionID}`,
+      method: "POST",
+      body: {
+        media_id: filmeId
+      }
+    })
+    console.log(result);
+  }
+
+  async function adicionarFilme(filmeId: string) {
+    let result = await HttpClient.get({
+      url: `https://api.themoviedb.org/3/movie/${filmeId}?api_key=${apiKey}&language=en-US`,
+      method: "GET"
+    })
+    console.log(result);
+  }
+
+  
+  
+  async function pegarLista() {
+    let result = await HttpClient.get({
+      url: `https://api.themoviedb.org/3/list/${listID}?api_key=${apiKey}`,
+      method: "GET"
+    })
+    console.log(result);
+  }
