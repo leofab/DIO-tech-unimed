@@ -20,6 +20,7 @@ let listID: string = '7101979';
 let loginButton = document.getElementById('login-button') as HTMLButtonElement;
 let searchButton = document.getElementById('search-button') as HTMLButtonElement;
 let searchContainer = document.getElementById('search-container') as HTMLInputElement;
+let list = document.getElementById('list') as HTMLDivElement;
 
 /**
     ** Validação de botão Login	
@@ -87,6 +88,10 @@ function preencherSenha() {
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  /**
+   * * Metodos de busca de dados para Login
+   */
+
   async function criarRequestToken () {
     let result = await HttpClient.get({
       url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
@@ -120,12 +125,23 @@ function preencherSenha() {
     console.log(`Session ID: ${sessionID}`);
     
   }
+
+  // * Implementei um método junto ao botão de login para mostar nome do usuario e lista de filmes que irá criar.
   
   loginButton.addEventListener('click', async () => {
     await criarRequestToken();
     await logar();
     await criarSessao();
+    let div = document.createElement('div');
+    div.innerHTML = `<h1>Bem vindo ${username}</h1>
+    <h2>Lista de filmes</h2>
+    `;
+    list.appendChild(div);
   });
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  
 
   async function procurarFilme(query: string) {
     query = encodeURI(query);
@@ -148,8 +164,12 @@ function preencherSenha() {
     ul.id = "lista";
     for (const item of listaDeFilmes.results) {
       let li = document.createElement('li');
-      li.appendChild(document.createTextNode(item.original_title));
+      let btn = document.createElement('button');
+      li.appendChild(document.createTextNode(item.original_title))
+      btn.appendChild(document.createTextNode('Adicionar'));
+      btn.className = 'btn';
       ul.appendChild(li);
+      ul.appendChild(btn);
     }
     console.log(listaDeFilmes);
     searchContainer.appendChild(ul);

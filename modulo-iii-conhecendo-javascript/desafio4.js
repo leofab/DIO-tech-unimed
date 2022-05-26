@@ -17,6 +17,7 @@ let listID = '7101979';
 let loginButton = document.getElementById('login-button');
 let searchButton = document.getElementById('search-button');
 let searchContainer = document.getElementById('search-container');
+let list = document.getElementById('list');
 /**
     ** Validação de botão Login
  */
@@ -75,6 +76,9 @@ class HttpClient {
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * * Metodos de busca de dados para Login
+ */
 async function criarRequestToken() {
     let result = await HttpClient.get({
         url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
@@ -102,11 +106,18 @@ async function criarSessao() {
     sessionID = result.session_id;
     console.log(`Session ID: ${sessionID}`);
 }
+// * Implementei um método junto ao botão de login para mostar nome do usuario e lista de filmes que irá criar.
 loginButton.addEventListener('click', async () => {
     await criarRequestToken();
     await logar();
     await criarSessao();
+    let div = document.createElement('div');
+    div.innerHTML = `<h1>Bem vindo ${username}</h1>
+    <h2>Lista de filmes</h2>
+    `;
+    list.appendChild(div);
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 async function procurarFilme(query) {
     query = encodeURI(query);
     console.log(query);
@@ -127,8 +138,12 @@ searchButton.addEventListener('click', async () => {
     ul.id = "lista";
     for (const item of listaDeFilmes.results) {
         let li = document.createElement('li');
+        let btn = document.createElement('button');
         li.appendChild(document.createTextNode(item.original_title));
+        btn.appendChild(document.createTextNode('Adicionar'));
+        btn.className = 'btn';
         ul.appendChild(li);
+        ul.appendChild(btn);
     }
     console.log(listaDeFilmes);
     searchContainer.appendChild(ul);
