@@ -5,18 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIO Desafio Typescript</title>
-    <script src="app.js" defer></script>
-    <script src="desafio3.js" defer></script>
+    <!-- <script src="app.js" defer></script> -->
+    <!-- <script src="desafio3.js" defer></script> -->
+    <script src="desafio4.js" defer></script>
 
-    <input type="text" id="input1">
+    <!-- <input type="text" id="input1">
     <input type="text" id="input2">
-    <button id="button">Click Aqui</button>
+    <button id="button">Click Aqui</button> -->
 </head>
 <body>
-    <h4>Valor a ser adicionado: <input id="soma"> </h4>
+    <!-- <h4>Valor a ser adicionado: <input id="soma"> </h4>
     <button id="atualizar-saldo">Atualizar saldo</button>
     <button id="limpar-saldo">Limpar seu saldo</button>
-    <h1>" Seu saldo é:  <span id="campo-saldo">0</span> "</h1>
+    <h1>" Seu saldo é:  <span id="campo-saldo">0</span> "</h1> -->
+
+
+    <h1>SESSAO</h1>
+    <div style="display: flex;">
+        <div style="display: flex; width: 300px; height: 100px; justify-content: space-between; flex-direction: column;">
+            <input id="login" placeholder="Login" onchange="preencherLogin(event)">
+            <input id="senha" placeholder="Senha" type="password" onchange="preencherSenha(event)">
+            <input id="api-key" placeholder="Api Key" onchange="preencherApi()">
+            <button id="login-button" disabled>Login</button>
+        </div>
+        <div id="search-container" style="margin-left: 20px">
+            <input id="search" placeholder="Escreva...">
+            <button id="search-button">Pesquisar Filme</button>
+        </div>
+      </div>
     
 </body>
 </html>
