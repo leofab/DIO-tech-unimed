@@ -20,6 +20,7 @@
             <th>Release Date</th>
             <th>Duration (hrs)</th>
             <th>Rating</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +33,9 @@
             <td>{{ course.duration}}</td>
             <td>
                 <app-star [rating]="course.rating"></app-star>
+            </td>
+            <td>
+                <a [routerLink]='["/courses/info", course.id]' class="btn btn-primary">Edit</a>
             </td>
         </tr>
     </tbody>
