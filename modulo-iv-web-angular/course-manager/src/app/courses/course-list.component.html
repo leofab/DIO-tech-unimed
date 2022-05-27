@@ -16,7 +16,9 @@
             <td>{{ course.name}}</td>
             <td>{{ course.price}}</td>
             <td>{{ course.duration}}</td>
-            <td>{{ course.rating}}</td>
+            <td>
+                <app-star [rating]="course.rating"></app-star>
+            </td>
         </tr>
     </tbody>
 </table>
