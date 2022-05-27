@@ -99,7 +99,6 @@ function preencherSenha() {
     });
     requestToken = (result as any).request_token;
     // console.log(`requestToken: ${result}`);
-    
   }
 
   async function logar() {
