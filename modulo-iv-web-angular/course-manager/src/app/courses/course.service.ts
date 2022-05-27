@@ -9,7 +9,7 @@ import { Course } from "./course";
 
 export class CourseService {
 
-    private courseUrl = "http://localhost:3100/api/courses";
+    private courseUrl: string = "http://localhost:3100/api/courses";
 
     constructor(private httpClient: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class CourseService {
 
     save(course: Course): Observable<Course> {
         if(course.id) {
-            return this.httpClient.put<Course>(`${this.courseUrl}/${course.id}`, course);
+            return this.httpClient.put<Course>(`${this.courseUrl}/:${course.id}`, course);
         } else {
             return this.httpClient.post<Course>(`${this.courseUrl}`, course);
         }
