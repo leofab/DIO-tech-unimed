@@ -27,17 +27,17 @@ let list = document.getElementById('list') as HTMLDivElement;
  */
 
 function preencherSenha() {
-    password = document.getElementById('senha').value;
+    password = (document.getElementById('senha') as HTMLInputElement).value;
     validateLoginButton();
   }
   
   function preencherLogin() {
-    username =  document.getElementById('login').value;
+    username =  (document.getElementById('login') as HTMLInputElement).value;
     validateLoginButton();
   }
   
   function preencherApi() {
-    apiKey = document.getElementById('api-key').value;
+    apiKey = (document.getElementById('api-key') as HTMLInputElement).value as string;
     validateLoginButton();
   }
   
@@ -55,7 +55,7 @@ function preencherSenha() {
     ** HTTPClient - Classe que faz requisições HTTP
    */
   class HttpClient {
-    static async get({url, method, body = null}) {
+    static async get({url, method, body = null} : {url: string, method: string, body?: any}) {
       return new Promise((resolve, reject) => {
         let request = new XMLHttpRequest();
         request.open(method, url, true);
@@ -97,8 +97,8 @@ function preencherSenha() {
       url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
       method: "GET"
     });
-    requestToken = result.request_token;
-    console.log(`requestToken: ${requestToken}`);
+    requestToken = (result as any).request_token;
+    // console.log(`requestToken: ${result}`);
     
   }
 
@@ -120,9 +120,9 @@ function preencherSenha() {
     let result = await HttpClient.get({
       url: `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}&request_token=${requestToken}`,
       method: "GET"
-    })
-    sessionID = result.session_id;
-    console.log(`Session ID: ${sessionID}`);
+    });
+    sessionID = (result as any).session_id;
+    // console.log(`Session ID: ${sessionID}`);
     
   }
 
@@ -158,11 +158,11 @@ function preencherSenha() {
     if (lista) {
       lista.outerHTML = "";
     }
-    let query = document.getElementById('search').value;
+    let query = (document.getElementById('search') as HTMLInputElement).value;
     let listaDeFilmes = await procurarFilme(query);
     let ul = document.createElement('ul');
     ul.id = "lista";
-    for (const item of listaDeFilmes.results) {
+    for (const item of (listaDeFilmes as any).results) {
       let li = document.createElement('li');
       let btn = document.createElement('button');
       li.appendChild(document.createTextNode(item.original_title))

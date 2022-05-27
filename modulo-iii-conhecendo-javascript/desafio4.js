@@ -85,7 +85,7 @@ async function criarRequestToken() {
         method: "GET"
     });
     requestToken = result.request_token;
-    console.log(`requestToken: ${requestToken}`);
+    // console.log(`requestToken: ${result}`);
 }
 async function logar() {
     await HttpClient.get({
@@ -104,7 +104,7 @@ async function criarSessao() {
         method: "GET"
     });
     sessionID = result.session_id;
-    console.log(`Session ID: ${sessionID}`);
+    // console.log(`Session ID: ${sessionID}`);
 }
 // * Implementei um método junto ao botão de login para mostar nome do usuario e lista de filmes que irá criar.
 loginButton.addEventListener('click', async () => {
