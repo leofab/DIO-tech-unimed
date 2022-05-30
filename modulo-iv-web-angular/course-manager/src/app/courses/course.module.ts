@@ -25,6 +25,7 @@ import { CourseListComponent } from "./course-list.component";
             {
                 path: "courses/info/:id", component: CourseInfoComponent
             }
+            
         ])
     ],
 })
