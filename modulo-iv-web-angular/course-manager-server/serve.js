@@ -33,7 +33,7 @@ app.route('/api/courses').post((request, response) => {
 });
 
 app.route('/api/courses/:id').put((request, response) => {
-  const courseId = +request.params['id'];
+  const courseId = Number(request.params['id']);
   const course = request.body;
 
   const index = COURSES.findIndex(courseIterator => courseIterator.id === courseId);
@@ -43,13 +43,13 @@ app.route('/api/courses/:id').put((request, response) => {
 });
 
 app.route('/api/courses/:id').get((request, response) => {
-  const courseId = +request.params['id'];
+  const courseId = Number(request.params['id']);
 
   response.status(200).send(COURSES.find(courseIterator => courseIterator.id === courseId));
 });
 
 app.route('/api/courses/:id').delete((request, response)=> {
-  const courseId = +request.params['id'];
+  const courseId = Number(request.params['id']);
   COURSES = COURSES.filter(courseIterator => courseIterator.id !== courseId);
   
   response.status(204).send({});
