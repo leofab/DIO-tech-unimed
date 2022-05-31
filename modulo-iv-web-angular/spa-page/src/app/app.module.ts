@@ -37,7 +37,7 @@ import { TableComponent } from './components/table/table.component';
     MatDividerModule,
     MatButtonModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
