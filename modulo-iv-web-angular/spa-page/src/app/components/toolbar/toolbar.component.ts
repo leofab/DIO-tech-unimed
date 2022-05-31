@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
-  inputs: ['title']
+  inputs: ['title', 'ELEMENT_DATA']
 })
 export class ToolbarComponent implements OnInit {
 

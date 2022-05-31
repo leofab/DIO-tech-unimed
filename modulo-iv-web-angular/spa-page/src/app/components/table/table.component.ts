@@ -8,15 +8,16 @@ export interface PeriodicElement {
   email: string;
   symbol: string;
   img: string;
+  id: number;
 }
 
-let ELEMENT_DATA: PeriodicElement[] = [
-  {img:'../../../assets/img/jeremy.jpg', position: 'CEO', name: 'Jeremy Hitchkins', email: 'JeremyCeo@bol.com', symbol: 'H',},
-  {img:'../../../assets/img/john.jpg',position: 'Tech Lead', name: 'John Goliath', email: 'JohnTL@bol.com', symbol: 'He', },
-  {img:'../../../assets/img/mary.jpg',position: 'Front Senior', name: 'Mary Moon', email: 'MarySen@bol.com', symbol: 'Li', },
-  {img:'../../../assets/img/unkown.jpg',position: 'Front Pleno', name: 'Fred Cocoon', email: 'FredPleno@bol.com', symbol: 'Be', },
-  {img:'../../../assets/img/suzan.jpg',position: 'Front Junior', name: 'Suzan Fritz', email: 'SuzanJun@bol.com', symbol: 'B', },
-  {img:'../../../assets/img/unkown.jpg',position: 'DB / Back Senior', name: 'Dan Pan', email: 'DanPanDB@bol.com', symbol: 'C', }
+export let ELEMENT_DATA: PeriodicElement[] = [
+  {id: 0, img:'../../../assets/img/jeremy.jpg', position: 'CEO', name: 'Jeremy Hitchkins', email: 'JeremyCeo@bol.com', symbol: 'H',},
+  {id: 1, img:'../../../assets/img/john.jpg',position: 'Tech Lead', name: 'John Goliath', email: 'JohnTL@bol.com', symbol: 'He', },
+  {id: 2, img:'../../../assets/img/mary.jpg',position: 'Front Senior', name: 'Mary Moon', email: 'MarySen@bol.com', symbol: 'Li', },
+  {id: 3, img:'../../../assets/img/unkown.jpg',position: 'Front Pleno', name: 'Fred Cocoon', email: 'FredPleno@bol.com', symbol: 'Be', },
+  {id: 4, img:'../../../assets/img/suzan.jpg',position: 'Front Junior', name: 'Suzan Fritz', email: 'SuzanJun@bol.com', symbol: 'B', },
+  {id: 5, img:'../../../assets/img/unkown.jpg',position: 'DB / Back Senior', name: 'Dan Pan', email: 'DanPanDB@bol.com', symbol: 'C', }
 ];
 
 @Component({
@@ -59,5 +60,6 @@ export class TableComponent implements OnChanges {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
+
 
 }
