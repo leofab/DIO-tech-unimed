@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ButtonAddComponent } from './button-add/button-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ButtonAddComponent
   ],
   imports: [
     BrowserModule,
