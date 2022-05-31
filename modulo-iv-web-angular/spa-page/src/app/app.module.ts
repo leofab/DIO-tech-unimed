@@ -4,6 +4,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 
 
@@ -14,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
-import { TableComponent } from './table/table.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,7 @@ import { TableComponent } from './table/table.component';
     HomeComponent,
     ToolbarComponent,
     ButtonAddComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { TableComponent } from './table/table.component';
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
