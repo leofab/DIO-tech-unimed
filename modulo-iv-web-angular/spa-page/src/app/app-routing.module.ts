@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'users', component: HomeComponent
   },
   {
-    path:  'users/edit/:id', component: EditTablesComponent
+    path:  'users/edit/:position', component: EditTablesComponent
   }
 ];
 
