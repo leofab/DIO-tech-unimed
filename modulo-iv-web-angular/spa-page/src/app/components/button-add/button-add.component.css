@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+section {
+    display: flex;
+  }
+  
+  .example-button-row {
+    display: flex;
+    width: 80rem;
+    justify-content: space-between;
+    margin: 8px 8px 8px 0;
+  }
+
+  #buttonAdd {
+    margin-left: auto;
+
+  }
+
+  
+  

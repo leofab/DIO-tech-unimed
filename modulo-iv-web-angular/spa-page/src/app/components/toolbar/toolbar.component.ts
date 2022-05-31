@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Input() titleTool: string = '';
+ 
   constructor() { }
 
   ngOnInit(): void {
