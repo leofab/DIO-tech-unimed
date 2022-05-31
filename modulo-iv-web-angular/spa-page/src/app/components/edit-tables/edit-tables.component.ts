@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,14 +6,14 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './edit-tables.component.html',
   styleUrls: ['./edit-tables.component.css']
 })
-export class EditTablesComponent implements OnChanges {
+export class EditTablesComponent implements OnInit {
 
   userPosition: string = '';
 
-  constructor(private ActivateRoute: ActivatedRoute) { }
+  constructor(private activateRoute: ActivatedRoute) { }
 
-  ngOnChanges(): void {
-      this.userPosition = String(this.ActivateRoute.snapshot.paramMap.get('position'));
+  ngOnInit(): void {
+      this.userPosition = String(this.activateRoute.snapshot.paramMap.get('position'));
   }
 
 }
