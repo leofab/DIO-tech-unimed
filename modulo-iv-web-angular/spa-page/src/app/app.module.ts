@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { TableComponent } from './components/table/table.component';
+import { EditTablesComponent } from './components/edit-tables/edit-tables.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TableComponent } from './components/table/table.component';
     ToolbarComponent,
     ButtonAddComponent,
     TableComponent,
+    EditTablesComponent,
   ],
   imports: [
     BrowserModule,
