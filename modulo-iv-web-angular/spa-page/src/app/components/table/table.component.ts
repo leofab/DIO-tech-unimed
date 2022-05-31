@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
 
@@ -10,7 +10,7 @@ export interface PeriodicElement {
   img: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {img:'../../../assets/img/jeremy.jpg', position: 'CEO', name: 'Jeremy Hitchkins', email: 'JeremyCeo@bol.com', symbol: 'H',},
   {img:'../../../assets/img/john.jpg',position: 'Tech Lead', name: 'John Goliath', email: 'JohnTL@bol.com', symbol: 'He', },
   {img:'../../../assets/img/mary.jpg',position: 'Front Senior', name: 'Mary Moon', email: 'MarySen@bol.com', symbol: 'Li', },
@@ -24,11 +24,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnChanges {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
   }
 
   displayedColumns: string[] = ['select', 'img', 'name','position', 'email', 'symbol',];

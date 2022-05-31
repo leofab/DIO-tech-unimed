@@ -4,7 +4,10 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', redirectTo:'users', pathMatch: 'full'
+  },
+  {
+    path: 'users', component: HomeComponent
   }
 ];
 
