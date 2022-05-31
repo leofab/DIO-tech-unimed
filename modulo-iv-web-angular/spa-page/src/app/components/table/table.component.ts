@@ -4,22 +4,19 @@ import {SelectionModel} from '@angular/cdk/collections';
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
+  position: string;
+  email: string;
   symbol: string;
+  img: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {img:'../../../assets/img/jeremy.jpg', position: 'CEO', name: 'Jeremy Hitchkins', email: 'JeremyCeo@bol.com', symbol: 'H',},
+  {img:'../../../assets/img/john.jpg',position: 'Tech Lead', name: 'John Goliath', email: 'JohnTL@bol.com', symbol: 'He', },
+  {img:'../../../assets/img/mary.jpg',position: 'Front Senior', name: 'Mary Moon', email: 'MarySen@bol.com', symbol: 'Li', },
+  {img:'../../../assets/img/unkown.jpg',position: 'Front Pleno', name: 'Fred Cocoon', email: 'FredPleno@bol.com', symbol: 'Be', },
+  {img:'../../../assets/img/suzan.jpg',position: 'Front Junior', name: 'Suzan Fritz', email: 'SuzanJun@bol.com', symbol: 'B', },
+  {img:'../../../assets/img/unkown.jpg',position: 'DB / Back Senior', name: 'Dan Pan', email: 'DanPanDB@bol.com', symbol: 'C', }
 ];
 
 @Component({
@@ -34,7 +31,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['select', 'img', 'name','position', 'email', 'symbol',];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 
