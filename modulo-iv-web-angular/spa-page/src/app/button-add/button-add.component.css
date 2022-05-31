@@ -1,17 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
 section {
-    display: table;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+
   }
   
   .example-label {
-    display: table-cell;
+    display: flex;
+    flex: 1 1 auto;
+
+    flex-direction: row;
     font-size: 14px;
     margin-left: 8px;
     min-width: 120px;
   }
   
   .example-button-row {
-    display: table-cell;
-    width: 490px;
+    display: flex;
+    width: 80rem;
+    flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+
+  #buttonAdd {
+    display: flex;
+    margin-left: auto;
+
   }
   
   .example-button-row .mat-button-base {
@@ -29,4 +50,6 @@ section {
     justify-content: center;
     width: 120px;
   }
+
+  
   
