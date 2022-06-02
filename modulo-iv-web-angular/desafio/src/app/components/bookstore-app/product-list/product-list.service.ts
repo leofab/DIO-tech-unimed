@@ -7,7 +7,7 @@ import { Book } from './model/Book';
 })
 export class ProductListService {
 
-  private url = 'http://localhost:4200/api/bookstore';
+  private url = 'http://localhost:3100/api/bookstore';
 
   httpOptions = {
     Headers: new HttpHeaders({'content-type:': 'application/json'})
