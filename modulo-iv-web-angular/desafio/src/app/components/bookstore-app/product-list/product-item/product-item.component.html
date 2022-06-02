@@ -1,9 +1,9 @@
 <div class="album py-5 bg-light">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row row-cols-1">
         <div class="col">
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img car-img-top" width="12rem" src='{{ "assets/images/" + livro.img + ".jpg" }}' alt="">
+          <div class="card shadow-sm" style="align-items: center;">
+            <img class="bd-placeholder-img car-img-top" width="220rem" src='{{ livro.img }}' alt="{{'Imagem do Livro: ' + livro.name  }}">
             <div class="card-body">
               <p class="card-text">{{ livro.name }}</p>
               <p class="card-text">{{ livro.category }}</p>
@@ -14,7 +14,6 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Detalhes</button>
                 </div>
-                <small class="text-muted">9 mins</small>
               </div>
             </div>
           </div>
